@@ -21,7 +21,7 @@ async def init_my_beanie():
 
 
 @app.exception_handler(DomainException)
-async def validation_exception_handler(request: Request, exc: DomainException):
+async def domain_exception_handler(request: Request, exc: DomainException):
     return JSONResponse(
         status_code=400,
         content=exc.args,
